@@ -1,72 +1,56 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { FaFacebookMessenger, FaPhoneAlt } from 'react-icons/fa';
+import { SiGmail } from 'react-icons/si';
 
-const Contact = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [responseMessage, setResponseMessage] = useState('');
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch('http://localhost:5000/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
-      });
-      const result = await res.json();
-      setResponseMessage(result.message);
-      setFormData({ name: '', email: '', message: '' });
-    } catch (err) {
-      console.error('Error submitting form:', err);
-      setResponseMessage('Something went wrong.');
-    }
-  };
-
-  return (
-    <section id="contact" className="py-16 bg-gray-100">
-      <div className="max-w-3xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            className="w-full p-3 border border-gray-300 rounded h-32"
-            required
-          ></textarea>
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition-colors"
+const Contact = () => (
+  <section id="contact" className="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
+    <div className="max-w-5xl mx-auto px-4">
+      <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
+      {/* Parent container ensures inline layout but wraps when needed */}
+      <div className="w-full flex flex-wrap justify-center gap-8">
+        
+        {/* Messenger */}
+        <div className="flex items-center space-x-4 transform hover:translate-y-1 transition duration-300">
+          <FaFacebookMessenger className="text-blue-600 text-2xl" />
+          <a 
+            href="https://m.me/SyanTorres" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-1.5xl text-gray-700 hover:text-blue-600"
           >
-            Send Message
-          </button>
-        </form>
-        {responseMessage && <p className="mt-6 text-center text-green-600">{responseMessage}</p>}
+            Chat with me on Messenger!
+          </a>
+        </div>
+
+        {/* Gmail */}
+        <div className="flex items-center space-x-4 transform hover:translate-y-1 transition duration-300">
+          <SiGmail className="text-red-600 text-2xl" />
+          <a 
+            href="mailto:torressyanvale@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-1.5xl text-gray-700 hover:text-blue-600"
+          >
+            Email @ torressyanvale@gmail.com
+          </a>
+        </div>
+
+        {/* Phone */}
+        <div className="flex items-center space-x-4 transform hover:translate-y-1 transition duration-300">
+          <FaPhoneAlt className="text-green-600 text-2xl" />
+          <a 
+            href="tel:+639298172574"
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="text-1.5xl text-gray-700 hover:text-blue-600"
+          >
+            +63 929 817 2574
+          </a>
+        </div>
+
       </div>
-    </section>
-  );
-};
+    </div>
+  </section>
+);
 
 export default Contact;
