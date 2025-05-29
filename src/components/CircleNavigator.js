@@ -7,7 +7,7 @@ const CircleNavigator = () => {
   const [smoothPos, setSmoothPos] = useState(0);
 
   // Static vertical range in vh units
-  const minPos = 57; // Starting position (38vh)
+  const minPos = 53; // Starting position (38vh)
   const maxPos = 62; // Ending position (74vh)
 
   // Fixed scroll range (in pixels) that maps 0 to 1 for scroll percentage.

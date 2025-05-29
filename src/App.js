@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Resume from './components/Resume';
+import Certificates from './components/Certificates';
 import ResumePage from './pages/ResumePage';  // The resume page
 import QuoteMachine from './components/QuoteMachine';
 import CircleNavigator from './components/CircleNavigator';
@@ -38,6 +39,7 @@ const Portfolio = () => (
       <About />
       <Skills />
       <Projects />
+      <Certificates />
       <Resume />
       <Contact />
     </div>

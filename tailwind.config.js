@@ -8,6 +8,9 @@ module.exports = {
         // Example custom color: a dark blue with a slightly muted (pale) quality
         'pale-dark-blue': '#2B3A4E',
         'blue-930': '#1A2D6A',
+        'royal-indigo': '#3C356C',
+        'glowing-blue': '#1E90FF',
+        'smoke-white': '#ECECEC',
       },
     },
   },
