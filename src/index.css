@@ -15,3 +15,75 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Main smokey ball styling */
+.smokey-ball {
+  position: relative; /* Ensure pseudo-elements are positioned relative to the ball */
+  z-index: 1;
+}
+
+/* Smoke puff common styles for both pseudo-elements */
+/* Top Smoke Puff */
+.smokey-ball::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;         /* Position at the top edge of the ball */
+  left: 50%;
+  width: 12px;          /* Adjust size as needed */
+  height: 12px;
+  background: radial-gradient(circle, rgba(200, 200, 200, 0.6) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, 0) scale(0.5);
+  opacity: 0.8;
+  animation: smokeTop 3s infinite ease-in-out;
+  z-index: -1;          /* Smoke appears behind the ball */
+}
+
+/* Bottom Smoke Puff */
+.smokey-ball::after {
+  content: "";
+  position: absolute;
+  top: 100%;            /* Position at the bottom edge of the ball */
+  left: 50%;
+  width: 12px;          /* Adjust size as needed */
+  height: 12px;
+  background: radial-gradient(circle, rgba(200, 200, 200, 0.6) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, 0) scale(0.5);
+  opacity: 0.8;
+  animation: smokeBottom 3s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* Keyframes to animate the top smoke — moves upward */
+@keyframes smokeTop {
+  0% {
+    transform: translate(-50%, 0) scale(0.75);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -20px) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, -40px) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Keyframes to animate the bottom smoke — moves downward */
+@keyframes smokeBottom {
+  0% {
+    transform: translate(-50%, 0) scale(0.75);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, 20px) scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-50%, 40px) scale(1.5);
+    opacity: 0;
+  }
+}
+/* Main smokey ball styling */

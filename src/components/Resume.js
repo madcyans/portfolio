@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Resume = () => (
   <section id="resume" className="py-8 bg-gradient-to-b from-indigo-950 to-slate-900">
-    <div className="max-w-4xl mx-auto px-4 text-center">
+    <div className="text-center mx-auto mx-14 px-8 sm:mx-14 sm:px-8 md:mx-24 md:px-12 lg:mx-30 lg:px-16 xl:mx-36 xl:px-20">
       <h2 className="text-3xl font-bold mb-4">Resume</h2>
       <p className="text-lg text-gray-700">
         Check out and Download my detailed resume.

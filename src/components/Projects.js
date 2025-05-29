@@ -24,6 +24,13 @@ const Projects = () => {
       url: 'https://random-quote-generator-madcyans-projects.vercel.app/',
       image: '/images/drum.png'
     },
+    {
+      id: 'memory-matching-game',
+      title: 'Memory Matching Game',
+      description: 'A classic memory matching game built with React, where players can test their memory skills by matching pairs of cards.',
+      url: 'https://memory-matching-game-nine.vercel.app/',
+      image: '/images/match.png'
+    },
   ]);
 
   useEffect(() => {
@@ -44,8 +51,8 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-16 bg-gradient-to-b from-blue-950 to-indigo-950">
-      <div className="relative pl-20 md:pl-26 lg:pl-28 xl:pl-28 2xl:pl-32 max-w-screen-xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-8">Projects</h2>
+      <div className="text-center mx-auto  mx-14 px-8 sm:mx-14 sm:px-8  md:mx-24 md:px-12 lg:mx-30 lg:px-16 xl:mx-36 xl:px-20">
+        <h2 className="text-3xl font-bold text-center mx-auto mb-6 </div>">Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {projects.map((project) => (
             <div key={project.id} className="pb-16">

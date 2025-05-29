@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Resume from './components/Resume';
 import ResumePage from './pages/ResumePage';  // The resume page
 import QuoteMachine from './components/QuoteMachine';
+import CircleNavigator from './components/CircleNavigator';
 
 const Portfolio = () => (
   <div className="text-white relative" style={{ fontFamily: "'Poppins', serif" }} >
@@ -16,8 +17,9 @@ const Portfolio = () => (
     <Header />
     
     {/* Global vertical line remains in place */}
-    <div className="fixed left-12 md:left-16 lg:left-20 xl:left-24 top-0 h-full w-1 bg-orange-700 z-40"></div>
-    
+    <div className="hidden lg:block">
+      <CircleNavigator />
+    </div>
     {/* Main content container that gets the mist overlay */}
     <div className="relative z-20">
       {/* Mist overlay covers only the main content container */}
