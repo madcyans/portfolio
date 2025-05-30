@@ -35,7 +35,6 @@ function QuoteMachine() {
       const { selected, remaining } = getRandomQuoteAndRemove(availableQuotes);
       setCurrentQuote(selected);
       setUnusedQuotes(remaining);
-
       // Fade the text back in.
       setFade(true);
     }, 500); // 500ms delay for the fade-out animation
@@ -44,30 +43,31 @@ function QuoteMachine() {
   return (
     // Wrapper element with id="quote-box" (User Story #1)
     <div className="relative bg-slate-950 w-full p-2 z-50 border-t-4 border-orange-800" id="quote-box-wrapper">
-      <div className="relative bg-slate-950 max-w-md w-full justify-center text-center p-1 mx-auto my-1 z-50" id="quote-box">
-        {/* Element with id="text" displays the quote (User Stories #2 and #6) */}
-        <p
-          id="text"
-          className={`text-2xl text-white mb-1 text-center transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
-        >
-          {currentQuote.text}
-        </p>
-        {/* Element with id="author" displays the quote's author (User Stories #3 and #7) */}
-        <p id="author" className="text-right text-white italic mb-1">
-          - {currentQuote.author}
-        </p>
-        <div className="flex justify-between">
-          {/* Clickable element with id="new-quote" updates the quote (User Stories #4, #8, and #9) */}
-          <button
-            id="new-quote"
-            onClick={handleNewQuote}
-            className="bg-gray-800 text-white py-1 px-4 rounded mr-2 hover:bg-gray-700 transition-colors"
+      <div className="relative bg-slate-950 max-w-7xl w-full justify-center text-center p-1 mx-auto my-1 z-50" id="quote-box">
+        {/* Left side: Quote text and author in one flex row */}
+        <div className="flex items-center space-x-4 overflow-hidden"></div>
+          <p
+            id="text"
+            className={`text-3xl text-white text-center transition-opacity duration-500 ${fade ? "opacity-100" : "opacity-0"}`}
           >
-            New Quote
-          </button>
+            {currentQuote.text}
+          </p>
+          <p id="author" className="text-right text-white italic">
+            - {currentQuote.author}
+          </p>
         </div>
-      </div>
-    </div>
+        {/* Right side: New Quote button shown as a reroll icon */}
+        <button
+          id="new-quote"
+          onClick={handleNewQuote}
+          className="bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition-colors"
+        >
+          {/* Reroll / refresh icon (SVG) */}
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v6h6M20 20v-6h-6M4 20l8-8m0 0l8-8" />
+          </svg>
+        </button>
+      </div> 
   );
 }
 

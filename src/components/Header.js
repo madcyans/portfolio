@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   // State to control header visibility
@@ -12,14 +11,11 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      // Always show header when at the very top of the page.
       if (currentScrollY === 0) {
         setShowHeader(true);
       } else if (currentScrollY < lastScrollY.current) {
-        // User scrolled up.
         setShowHeader(true);
       } else {
-        // User scrolled down.
         setShowHeader(false);
       }
       lastScrollY.current = currentScrollY;
@@ -34,28 +30,41 @@ const Header = () => {
     { href: "#about", label: "About" },
     { href: "#skills", label: "Skills" },
     { href: "#projects", label: "Projects" },
+    { href: "#certificates", label: "Certificates" },
     { href: "#resume", label: "Resume" },
     { href: "#contact", label: "Contact" }
   ];
 
+  // onClick handler to scroll such that the target element is centered
+  const handleNavClick = (e, href) => {
+    e.preventDefault(); // Prevent the default jump
+    const targetElement = document.querySelector(href);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  };
+
   return (
-    // Using fixed positioning so the header stays at the top of the viewport.
-    // The transform classes animate the header sliding in and out.
     <header
       className={`bg-slate-950 py-6 fixed top-0 w-full z-50 transform transition-transform duration-300 border-b-4 border-orange-800 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <nav>
-        <ul className="flex justify-center space-x-6">
+        <ul className="flex justify-center space-x-6 md:space-x-12">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
+              {/* For internal anchor links, use the smooth scroll behavior */}
               {href.startsWith("/") ? (
-                <Link className="text-white hover:text-gray-300" to={href}>
+                <Link className="text-xs md:text-base text-white hover:text-gray-300" to={href}>
                   {label}
                 </Link>
               ) : (
-                <a className="text-white hover:text-gray-300" href={href}>
+                <a
+                  href={href}
+                  onClick={(e) => handleNavClick(e, href)}
+                  className="text-xs md:text-base text-white hover:text-gray-300"
+                >
                   {label}
                 </a>
               )}
@@ -66,6 +75,5 @@ const Header = () => {
     </header>
   );
 };
-
 
 export default Header;

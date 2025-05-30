@@ -7,7 +7,7 @@ const Projects = () => {
       id: 'quote-generator',
       title: 'Random Quote Generator',
       description: 'A sleek and interactive web app built with React, designed to deliver thought-provoking, motivational, or humorous quotes at the click of a button.',
-      url: 'https://drum-machine-livid.vercel.app/',
+      url: 'https://random-quote-generator-madcyans-projects.vercel.app/',
       image: '/images/quote.png'
     },
     {
@@ -21,7 +21,7 @@ const Projects = () => {
       id: 'drum-machine',
       title: 'Drum Machine',
       description: 'A fun and interactive drum machine built with React, allowing users to create beats and rhythms using a variety of drum sounds.',
-      url: 'https://random-quote-generator-madcyans-projects.vercel.app/',
+      url: 'https://drum-machine-livid.vercel.app/',
       image: '/images/drum.png'
     },
     {

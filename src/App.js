@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -8,7 +7,6 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Resume from './components/Resume';
 import Certificates from './components/Certificates';
-import ResumePage from './pages/ResumePage';  // The resume page
 import QuoteMachine from './components/QuoteMachine';
 import CircleNavigator from './components/CircleNavigator';
 
@@ -49,13 +47,7 @@ const Portfolio = () => (
   </div>
 );
 
-const App = () => (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Portfolio />} />
-      <Route path="/resume-page" element={<ResumePage />} />
-    </Routes>
-  </Router>
-);
+
+const App = () => <Portfolio />;
 
 export default App;
