@@ -46,26 +46,30 @@ const Header = () => {
 
   return (
     <header
-      className={`bg-slate-950 py-6 fixed top-0 w-full z-50 transform transition-transform duration-300 border-b-4 border-orange-800 ${
+      className={`bg-slate-950 py-4 fixed top-0 w-full z-50 transform transition-transform duration-300 border-b-4 border-orange-800 ${
         showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
       <nav>
-        <ul className="flex justify-center space-x-6 md:space-x-12">
+        <ul className="flex justify-center divide-x divide-cyan-400">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
               {/* For internal anchor links, use the smooth scroll behavior */}
               {href.startsWith("/") ? (
-                <Link className="text-xs md:text-base text-white hover:text-gray-300" to={href}>
-                  {label}
+                <Link to={href} className="text-white hover:text-gray-300">
+                  <span className="inline-block px-4 py-2 text-sm md:text-base lg:text-md xl:text-lg">
+                    {label}
+                  </span>
                 </Link>
               ) : (
                 <a
                   href={href}
                   onClick={(e) => handleNavClick(e, href)}
-                  className="text-xs md:text-base text-white hover:text-gray-300"
+                  className="text-cyan-100 hover:text-gray-300"
                 >
-                  {label}
+                  <span className='inline-block px-2 xl:px-12 py-2 text-sm md:text-base lg:text-md xl:text-lg'>
+                    {label}
+                  </span>
                 </a>
               )}
             </li>

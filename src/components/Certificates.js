@@ -57,9 +57,9 @@ const Certificates = () => {
     <section id="certificates" className="pb-16 pt-8 bg-gradient-to-b from-royal-indigo to-indigo-950">
       <div className="container mx-auto">
         {/* Divider at the very top */}
-        <hr className="border-t-2 border-gray-300 mb-14" />
+        <hr className="border-t-2 border-cyan-300 mb-14" />
 
-        <h2 className="text-3xl font-bold text-center mb-6">Certificates</h2>
+        <h2 className="text-3xl text-cyan-200 text-center mb-6">Certificates</h2>
 
         {/* Grid with 2 rows and 2 columns on larger screens */}
         <div className="grid grid-cols-1 lg:grid-cols-2 text-xl gap-8">
@@ -72,7 +72,7 @@ const Certificates = () => {
 
             return (
               <div key={index}>
-                <h3 className="font-bold mb-1">{categoryObj.category}</h3>
+                <h3 className="font-bold mb-1 text-cyan-100">{categoryObj.category}</h3>
                 <div className={`w-full text-sm grid ${gridColsClasses} gap-4`}>
                   {categoryObj.certificates.map((cert, idx) => (
                     <CertificateCard certificate={cert} key={idx} />
@@ -85,7 +85,7 @@ const Certificates = () => {
           {/* Row 2: React + Node.js */}
           {certificateCategories.row2.map((categoryObj, index) => (
             <div key={index}>
-              <h3 className="font-bold mb-1">{categoryObj.category}</h3>
+              <h3 className="font-bold mb-1 text-cyan-100">{categoryObj.category}</h3>
               <div className="w-fit text-sm grid grid-cols-1 gap-6">
                 {categoryObj.certificates.map((cert, idx) => (
                   <CertificateCard certificate={cert} key={idx} />

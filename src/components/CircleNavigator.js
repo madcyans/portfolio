@@ -7,8 +7,8 @@ const CircleNavigator = () => {
   const [smoothPos, setSmoothPos] = useState(0);
 
   // Static vertical range in vh units
-  const minPos = 53; // Starting position (38vh)
-  const maxPos = 62; // Ending position (74vh)
+  const minPos = 56; // Starting position (38vh)
+  const maxPos = 69; // Ending position (74vh)
 
   // Fixed scroll range (in pixels) that maps 0 to 1 for scroll percentage.
   const fixedScrollRange = 400; // Adjust this value to fit your scroll range
@@ -55,7 +55,7 @@ const CircleNavigator = () => {
       <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1"></div>
       {/* Circle indicator (centered horizontally) */}
       <div
-        className="absolute left-1/2 transform -translate-x-1/2 w-3 h-6 bg-gray-400 rounded-full smokey-ball"
+        className="absolute left-1/2 transform -translate-x-1/2 w-3 h-10 bg-cyan-200 rounded-full smokey-ball"
         style={{ top: `${computedTop}vh` }}
       ></div>
     </div>

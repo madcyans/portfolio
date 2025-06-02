@@ -5,7 +5,7 @@ import { SiGmail } from 'react-icons/si';
 const Contact = () => (
   <section id="contact" className="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
     <div className="mx-auto mx-14 px-8 sm:mx-14 sm:px-8 md:mx-24 md:px-12 lg:mx-30 lg:px-16 xl:mx-36 xl:px-20">
-      <h2 className="text-3xl font-bold text-center mb-8">Contact Me</h2>
+      <h2 className="text-3xl text-cyan-200 text-center mb-8">Contact Me</h2>
       {/* Parent container ensures inline layout but wraps when needed */}
       <div className="w-full flex flex-wrap justify-center gap-8">
         
@@ -16,7 +16,7 @@ const Contact = () => (
             href="https://m.me/SyanTorres" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-1.5xl text-gray-700 hover:text-blue-600"
+            className="text-xl text-cyan-100 hover:text-cyan-400"
           >
             Chat with me on Messenger!
           </a>
@@ -29,7 +29,7 @@ const Contact = () => (
             href="mailto:torressyanvale@gmail.com" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-1.5xl text-gray-700 hover:text-blue-600"
+            className="text-xl text-cyan-100 hover:text-cyan-400"
           >
             Email @ torressyanvale@gmail.com
           </a>
@@ -42,7 +42,7 @@ const Contact = () => (
             href="tel:+639298172574"
             target="_blank"
             rel="noopener noreferrer" 
-            className="text-1.5xl text-gray-700 hover:text-blue-600"
+            className="text-xl text-cyan-100 hover:text-cyan-400"
           >
             +63 929 817 2574
           </a>
