@@ -87,7 +87,7 @@ const Certificates = () => {
           {certificateCategories.row2.map((categoryObj, index) => (
             <div key={index}>
               <h3 className="font-bold mb-1 text-cyan-100">{categoryObj.category}</h3>
-              <div className="w-fit text-sm grid grid-cols-1 gap-6">
+              <div className="w-fit text-sm grid grid-cols-2 gap-6">
                 {categoryObj.certificates.map((cert, idx) => (
                   <CertificateCard certificate={cert} key={idx} />
                 ))}
