@@ -50,7 +50,7 @@ const Projects = () => {
     fetch('http://localhost:5000/projects')
       .then((res) => res.json())
       .then((data) => {
-        // Update state only if we retrieve a non-empty array.
+        // Update state only if we retrieved a non-empty array.
         if (Array.isArray(data) && data.length > 0) {
           setProjects(data);
         }
@@ -61,60 +61,69 @@ const Projects = () => {
       });
   }, []);
 
+  // Group projects into rows of 3 items each.
+  const projectRows = [];
+  for (let i = 0; i < projects.length; i += 3) {
+    projectRows.push(projects.slice(i, i + 3));
+  }
+
   return (
     <section id="projects" className="py-16 bg-gradient-to-b from-blue-950 to-royal-indigo">
       <div className="container mx-auto px-8 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <h2 className="text-3xl text-cyan-200 text-center mb-6">Projects</h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          {projects.map((project) => (
-            <div key={project.id} className="w-full sm:w-1/2 lg:w-1/3 pb-16">
-              <div className="relative group">
-                {/* Clickable image card */}
-                <div className="relative h-48">
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-48 object-cover rounded-lg transition-transform duration-500 group-hover:scale-110 group-hover:shadow-[0_5px_5px_rgba(0,0,0,5)]"
-                    />
-                  </a>
-                </div>
-                {/* Overlapping description panel */}
-                <div
-                  className="
-                    absolute bottom-0 left-0 w-full
-                    transform translate-y-1/2
-                    bg-white bg-opacity-80 px-4 py-2
-                    rounded-lg border border-orange-500
-                    transition-transform duration-500
-                    group-hover:translate-y-[120%]
-                  "
-                >
-                  <h3 className="text-lg text-center font-semibold text-gray-800">
-                    {project.title}
-                  </h3>
-                  <p
+        {/* Loop through each row */}
+        {projectRows.map((row, rowIndex) => (
+          <div key={rowIndex} className="flex flex-wrap justify-center gap-6">
+            {row.map((project) => (
+              <div key={project.id} className="pb-16 w-full sm:w-1/2 lg:w-1/3">
+                <div className="relative group">
+                  {/* Clickable image card */}
+                  <div className="relative h-48">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-48 object-cover rounded-lg transition-transform duration-500 group-hover:scale-110 group-hover:shadow-[0_5px_5px_rgba(0,0,0,5)]"
+                      />
+                    </a>
+                  </div>
+                  {/* Overlapping description panel */}
+                  <div
                     className="
-                      text-sm text-gray-700 
-                      overflow-hidden 
-                      transition-all duration-500 
-                      max-h-20
-                      group-hover:max-h-0
-                      group-hover:rounded
+                      absolute bottom-0 left-0 w-full
+                      transform translate-y-1/2
+                      bg-white bg-opacity-80 px-4 py-2
+                      rounded-lg border border-orange-500
+                      transition-transform duration-500
+                      group-hover:translate-y-[120%]
                     "
                   >
-                    {project.description}
-                  </p>
+                    <h3 className="text-lg text-center font-semibold text-gray-800">
+                      {project.title}
+                    </h3>
+                    <p
+                      className="
+                        text-sm text-gray-700 
+                        overflow-hidden 
+                        transition-all duration-500 
+                        max-h-20
+                        group-hover:max-h-0
+                        group-hover:rounded
+                      "
+                    >
+                      {project.description}
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        ))}
       </div>
     </section>
   );
