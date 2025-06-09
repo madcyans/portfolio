@@ -28,9 +28,10 @@ const Certificates = () => {
         ],
       },
       {
-        category: "Node.js Certificate",
+        category: "Node.js & PHP Certificates",
         certificates: [
-          { title: "Back End Development and APIs", issuer: "LinkedIn Learning", date: "-May 20, 2025", pdfLink: "/certificates/Certificate-BackEndDev.pdf" },
+          { title: "Back End Development and APIs", issuer: "freeCodeCamp", date: "-May 20, 2025", pdfLink: "/certificates/Certificate-BackEndDev.pdf" },
+          { title: "Introduction to PHP", issuer: "Simplilearn", date: "-June 07, 2025", pdfLink: "/certificates/PHP-Introduction.pdf" },
         ],
       },
     ],
