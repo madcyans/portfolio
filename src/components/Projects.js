@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Projects = () => {
-  // Initialize state with a placeholder project.
+  // Initialize state with placeholder projects.
   const [projects, setProjects] = useState([
     {
       id: 'quote-generator',
@@ -50,14 +50,14 @@ const Projects = () => {
     fetch('http://localhost:5000/projects')
       .then((res) => res.json())
       .then((data) => {
-        // Update state only if we retrieved a non-empty array.
+        // Update state only if we retrieve a non-empty array.
         if (Array.isArray(data) && data.length > 0) {
           setProjects(data);
         }
       })
       .catch((err) => {
         console.error('Error fetching projects:', err);
-        // If an error occurs, the placeholder project remains.
+        // If an error occurs, the placeholder projects remain.
       });
   }, []);
 
@@ -66,7 +66,8 @@ const Projects = () => {
       <div className="text-center mx-auto px-8 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <h2 className="text-3xl text-cyan-200 mx-auto mb-6">Projects</h2>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg ustify-items-center">
+          {/* Use inline-grid so the grid's width will shrink to its content */}
+          <div className="inline-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {projects.map((project) => (
               <div key={project.id} className="pb-16">
                 <div className="relative group">
@@ -88,26 +89,26 @@ const Projects = () => {
                   {/* Overlapping description panel */}
                   <div
                     className="
-                    absolute bottom-0 left-0 w-full
-                    transform translate-y-1/2
-                    bg-white bg-opacity-80 px-4 py-2
-                    rounded-lg border border-orange-500
-                    transition-transform duration-500
-                    group-hover:translate-y-[120%]
-                  "
+                      absolute bottom-0 left-0 w-full
+                      transform translate-y-1/2
+                      bg-white bg-opacity-80 px-4 py-2
+                      rounded-lg border border-orange-500
+                      transition-transform duration-500
+                      group-hover:translate-y-[120%]
+                    "
                   >
                     <h3 className="text-lg text-center font-semibold text-gray-800">
                       {project.title}
                     </h3>
                     <p
                       className="
-                    text-sm text-gray-700 
-                    overflow-hidden 
-                    transition-all duration-500 
-                    max-h-20 
-                    group-hover:max-h-0
-                    group-hover:rounded
-                  "
+                        text-sm text-gray-700 
+                        overflow-hidden 
+                        transition-all duration-500 
+                        max-h-20 
+                        group-hover:max-h-0
+                        group-hover:rounded
+                      "
                     >
                       {project.description}
                     </p>
