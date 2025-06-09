@@ -50,7 +50,7 @@ const Projects = () => {
     fetch('http://localhost:5000/projects')
       .then((res) => res.json())
       .then((data) => {
-        // Update state only if we retrieved a non-empty array.
+        // Update state only if we retrieve a non-empty array.
         if (Array.isArray(data) && data.length > 0) {
           setProjects(data);
         }
@@ -61,7 +61,7 @@ const Projects = () => {
       });
   }, []);
 
-  // Group projects into rows of 3 items each.
+  // Manually group projects into rows of three.
   const projectRows = [];
   for (let i = 0; i < projects.length; i += 3) {
     projectRows.push(projects.slice(i, i + 3));
@@ -69,13 +69,14 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-16 bg-gradient-to-b from-blue-950 to-royal-indigo">
-      <div className="container mx-auto px-8 sm:px-8 md:px-12 lg:px-16 xl:px-20">
+      <div className="container mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
         <h2 className="text-3xl text-cyan-200 text-center mb-6">Projects</h2>
-        {/* Loop through each row */}
+        {/* Map over the rows, and center each row's content */}
         {projectRows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex flex-wrap justify-center gap-6">
+          <div key={rowIndex} className="flex justify-center gap-6">
             {row.map((project) => (
-              <div key={project.id} className="pb-16 w-full sm:w-1/2 lg:w-1/3">
+              // For desktop, always assign one-third width so that three projects fit perfectly.
+              <div key={project.id} className="w-1/3 pb-16">
                 <div className="relative group">
                   {/* Clickable image card */}
                   <div className="relative h-48">
