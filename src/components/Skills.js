@@ -6,7 +6,9 @@ const skills = [
   "JavaScript",
   "React",
   "Node.js",
-  "Express"
+  "Express",
+  "PHP",
+  "XAMPP",
 ];
 
 const Skills = () => (
