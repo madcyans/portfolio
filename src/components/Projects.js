@@ -66,7 +66,7 @@ const Projects = () => {
       <div className="text-center mx-auto px-8 sm:px-8 md:px-12 lg:px-16 xl:px-20">
         <h2 className="text-3xl text-cyan-200 mx-auto mb-6">Projects</h2>
         <div className="flex justify-center">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-screen-lg ustify-items-center">
             {projects.map((project) => (
               <div key={project.id} className="pb-16">
                 <div className="relative group">
