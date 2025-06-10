@@ -3,7 +3,7 @@ import React from 'react';
 const Resume = () => (
   <section id="resume" className="py-8 bg-gradient-to-b from-indigo-950 to-slate-900">
     <div className="max-w-2xl mx-auto px-2 py-4 text-center border-4 border-orange-700 rounded-full">
-      <h2 className="text-3xl text-cyan-200 mb-6 pb-4 text-white">Resume</h2>
+      <h2 className="text-3xl text-cyan-200 mb-6 pb-4 text-cyan-200">Resume</h2>
       <div className="mt-4">
         <a
           href="/certificates/Torres-Syan-CV.pdf" 
