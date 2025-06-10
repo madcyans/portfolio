@@ -53,9 +53,9 @@ const Header = () => {
       <nav className="flex items-center justify-between px-4">
         {/* Logo */}
         <img 
-          src="/images/logo192.png"
+          src="/logo192.png"
           alt="Cyan Towers"
-          className="h-10 w-auto md:h-12 lg:h-14 xl:h-16"
+          className="h-14 w-auto md:h-16 lg:h-18 xl:h-20"
         />
 
         <ul className="flex justify-center divide-x divide-cyan-400">
