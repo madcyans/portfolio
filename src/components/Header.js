@@ -50,7 +50,14 @@ const Header = () => {
         showHeader ? 'translate-y-0' : '-translate-y-full'
       }`}
     >
-      <nav>
+      <nav className="flex items-center justify-between px-4">
+        {/* Logo */}
+        <img 
+          src="/images/logo192.png"
+          alt="Cyan Towers"
+          className="h-10 w-auto md:h-12 lg:h-14 xl:h-16"
+        />
+
         <ul className="flex justify-center divide-x divide-cyan-400">
           {navLinks.map(({ href, label }) => (
             <li key={href}>
