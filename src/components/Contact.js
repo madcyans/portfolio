@@ -13,7 +13,7 @@ const Contact = () => (
         <div className="flex items-center space-x-4 transform hover:translate-y-1 transition duration-300">
           <FaFacebookMessenger className="text-blue-600 text-2xl" />
           <a 
-            href="https://m.me/SyanTorres" 
+            href="https://m.me/TorresSyanVale" 
             target="_blank" 
             rel="noopener noreferrer"
             className="text-xl text-cyan-100 hover:text-cyan-400"

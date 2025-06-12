@@ -35,7 +35,7 @@ const Projects = () => {
       url: 'https://memory-matching-game-nine.vercel.app/',
       image: '/images/match.png',
     },
-    /*
+    /* not fixed yet
     {
       id: 'nature-architecture-gallery',
       title: 'Nature & Architecture Gallery',
