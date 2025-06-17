@@ -7,8 +7,8 @@ const skills = [
   "React",
   "Node.js",
   "Express",
-  "PHP",
-  "XAMPP",
+  "MongoDB",
+  "Tailwind",
 ];
 
 const Skills = () => (

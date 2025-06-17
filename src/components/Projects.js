@@ -31,11 +31,11 @@ const Projects = () => {
       id: 'memory-matching-game',
       title: 'Memory Matching Game',
       description:
-        'A classic memory matching game built with React, enhanced with an API Weather Checker that dynamically updates the background based on your current weather. Test your memory while enjoying an interactive, context-aware visual experience.',
+        'A classic memory matching game enhanced with an API Weather Checker that dynamically updates the background based on your current weather. Test your memory while enjoying an interactive visual experience.',
       url: 'https://memory-matching-game-nine.vercel.app/',
       image: '/images/match.png',
     },
-    /* not fixed yet
+    /* Not yet implemented
     {
       id: 'nature-architecture-gallery',
       title: 'Nature & Architecture Gallery',
