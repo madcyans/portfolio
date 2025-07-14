@@ -22,7 +22,7 @@ const Skills = () => (
         <div className="md:mx-2 md:px-2 lg:mx-4 lg:px-4 xl:mx-6 xl:px-6">
           <ul className="flex flex-wrap justify-center gap-12">
             {skills.map((skill) => (
-              <li key={skill} className=" py-2 px-6 rounded-3xl p-8 bg-[radial-gradient(circle,_rgba(30,64,175)_0%,_rgba(30,64,175,0.2)_100%)] text-cyan-100 rounded-xl text-2xl">
+              <li key={skill} className=" py-2 px-6 p-8 bg-[radial-gradient(circle,_rgba(30,64,175)_0%,_rgba(30,64,175,0.2)_100%)] text-cyan-100 rounded-xl text-2xl">
                 {skill}
               </li>
             ))}

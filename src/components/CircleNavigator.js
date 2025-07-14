@@ -49,11 +49,12 @@ const CircleNavigator = () => {
   // Map smoothPos (0 to 1) into the static vertical range (in vh units)
   const computedTop = minPos + smoothPos * (maxPos - minPos);
 
+
   return (
     <div className="fixed left-16 top-0 h-screen w-8 z-40 pointer-events-none">
-      {/* Vertical line */}
+      
       <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1"></div>
-      {/* Circle indicator (centered horizontally) */}
+      
       <div
         className="absolute left-1/2 transform -translate-x-1/2 w-2 h-8 bg-cyan-200 rounded-full smokey-ball"
         style={{ top: `${computedTop}vh` }}
@@ -61,5 +62,7 @@ const CircleNavigator = () => {
     </div>
   );
 };
+
+
 
 export default CircleNavigator;

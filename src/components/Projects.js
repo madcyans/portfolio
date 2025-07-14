@@ -4,6 +4,14 @@ const Projects = () => {
   // Initialize state with placeholder projects.
   const [projects, setProjects] = useState([
     {
+      id: 'ridiculous-quiz-game',
+      title: 'Ridiculous Quiz Game',
+      description:
+        'An engaging quiz game that challenges your knowledge with a variety of questions, built with React/Tailwind using a custom useQuiz hook, Firebase for auth and scores, and dynamic audio effects and transitions for a playful duck-themed trivia experience.',
+      url: 'https://auth-boilerplate-2339d.web.app',
+      image: '/images/rqgduck.png',
+    },
+    {
       id: 'quote-generator',
       title: 'Random Quote Generator',
       description:
@@ -35,7 +43,6 @@ const Projects = () => {
       url: 'https://memory-matching-game-nine.vercel.app/',
       image: '/images/match.png',
     },
-    
     {
       id: 'nature-architecture-gallery',
       title: 'Nature & Architecture Gallery',
@@ -43,7 +50,7 @@ const Projects = () => {
         'A captivating collection of breathtaking landscapes and stunning architectural designs, seamlessly showcased through PHP and XAMPP. Explore the beauty of nature and human creativity, brought to life with dynamic web technology. Stay connected—contact details are securely stored and managed with MySQL for easy access and interaction.',
       url: 'https://syantorres.infinityfreeapp.com/',
       image: '/images/nature.png',
-    }, 
+    },
   ]);
 
   useEffect(() => {
@@ -62,70 +69,60 @@ const Projects = () => {
       });
   }, []);
 
-  // Manually group projects into rows of three.
-  const projectRows = [];
-  for (let i = 0; i < projects.length; i += 3) {
-    projectRows.push(projects.slice(i, i + 3));
-  }
-
   return (
     <section id="projects" className="py-16 bg-gradient-to-b from-blue-950 to-royal-indigo">
       <div className="container mx-auto px-8 md:px-12 lg:px-16 xl:px-20">
         <h2 className="text-3xl text-cyan-200 text-center mb-6">Projects</h2>
-        {/* Map over the rows, and center each row's content */}
-        {projectRows.map((row, rowIndex) => (
-          <div key={rowIndex} className="flex justify-center gap-6">
-            {row.map((project) => (
-              // For desktop, always assign one-third width so that three projects fit perfectly.
-              <div key={project.id} className="w-1/3 pb-16">
-                <div className="relative group">
-                  {/* Clickable image card */}
-                  <div className="relative h-48">
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-48 object-cover rounded-lg transition-transform duration-500 group-hover:scale-110 group-hover:shadow-[0_5px_5px_rgba(0,0,0,5)]"
-                      />
-                    </a>
-                  </div>
-                  {/* Overlapping description panel */}
-                  <div
+        {/* Use a flex container that wraps */}
+        <div className="flex flex-wrap justify-center gap-6">
+          {projects.map((project) => (
+            // Responsive width classes: full width on mobile, one-third on md and above.
+            <div key={project.id} className="w-full md:w-1/3 pb-16">
+              <div className="relative group">
+                <div className="relative h-48">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover rounded-lg transition-transform duration-500 group-hover:scale-110 group-hover:shadow-[0_5px_5px_rgba(0,0,0,0.5)]"
+                    />
+                  </a>
+                </div>
+                <div
+                  className="
+                    absolute bottom-0 left-0 w-full
+                    transform translate-y-1/2
+                    bg-white px-2 py-2
+                    rounded-lg border border-orange-500
+                    transition-transform duration-500
+                    group-hover:translate-y-[120%]
+                  "
+                >
+                  <h3 className="text-lg text-center font-semibold text-gray-800">
+                    {project.title}
+                  </h3>
+                  <p
                     className="
-                      absolute bottom-0 left-0 w-full
-                      transform translate-y-1/2
-                      bg-white bg-opacity-80 px-4 py-2
-                      rounded-lg border border-orange-500
-                      transition-transform duration-500
-                      group-hover:translate-y-[120%]
+                      text-sm text-gray-700 
+                      overflow-hidden 
+                      transition-all duration-500 
+                      max-h-20
+                      group-hover:max-h-0
+                      group-hover:rounded
                     "
                   >
-                    <h3 className="text-lg text-center font-semibold text-gray-800">
-                      {project.title}
-                    </h3>
-                    <p
-                      className="
-                        text-sm text-gray-700 
-                        overflow-hidden 
-                        transition-all duration-500 
-                        max-h-20
-                        group-hover:max-h-0
-                        group-hover:rounded
-                      "
-                    >
-                      {project.description}
-                    </p>
-                  </div>
+                    {project.description}
+                  </p>
                 </div>
               </div>
-            ))}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
