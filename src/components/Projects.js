@@ -4,6 +4,14 @@ const Projects = () => {
   // Initialize state with placeholder projects.
   const [projects, setProjects] = useState([
     {
+      id: 'pinoy-pantry',
+      title: 'Pinoy Pantry',
+      description:
+        'Pinoy Dessert Pantry is a mobile-friendly React app that showcases Filipino sweets through dynamic category browsing, daily featured recipes, and Firestore-powered filtering.',
+      url: 'https://pinoy-pantry.web.app/',
+      image: '/images/pinoy-pantry.png',
+    },
+    {
       id: 'ridiculous-quiz-game',
       title: 'Ridiculous Quiz Game',
       description:
