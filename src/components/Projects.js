@@ -51,14 +51,6 @@ const Projects = () => {
       url: 'https://memory-matching-game-nine.vercel.app/',
       image: '/images/match.png',
     },
-    {
-      id: 'nature-architecture-gallery',
-      title: 'Nature & Architecture Gallery',
-      description:
-        'A captivating collection of breathtaking landscapes and stunning architectural designs, seamlessly showcased through PHP and XAMPP. Explore the beauty of nature and human creativity, brought to life with dynamic web technology. Stay connected—contact details are securely stored and managed with MySQL for easy access and interaction.',
-      url: 'https://syantorres.infinityfreeapp.com/',
-      image: '/images/nature.png',
-    },
   ]);
 
   useEffect(() => {
