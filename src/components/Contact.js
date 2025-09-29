@@ -4,7 +4,7 @@ import { SiGmail } from 'react-icons/si';
 
 const Contact = () => (
   <section id="contact" className="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
-    <div className="mx-auto mx-14 px-8 sm:mx-14 sm:px-8 md:mx-24 md:px-12 lg:mx-30 lg:px-16 xl:mx-36 xl:px-20">
+    <div className="mx-auto x-8 sm:mx-14 sm:px-8 md:mx-24 md:px-12 lg:mx-30 lg:px-16 xl:mx-36 xl:px-20">
       <h2 className="text-3xl text-cyan-200 text-center mb-8">Contact Me</h2>
       {/* Parent container ensures inline layout but wraps when needed */}
       <div className="w-full flex flex-wrap justify-center gap-8">
