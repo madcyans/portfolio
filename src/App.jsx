@@ -21,18 +21,17 @@ const Portfolio = () => (
     </div>
     {/* Main content container that gets the mist overlay */}
     <div className="relative z-20">
-      {/* Mist overlay covers only the main content container */}
       <div 
         className="absolute inset-0 pointer-events-none z-10"
         style={{
-          backgroundImage: "url('/images/mist.png')", // mist image in public/images folder
+          backgroundImage: "url('/images/mist.png')",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
-          opacity: 0.10, // Adjust the opacity for a subtle effect
+          opacity: 0.10,
         }}
       ></div>
       
-      {/* Main page components that display content */}
+      {/* Main page components */}
       <Hero />
       <About />
       <Skills />
@@ -42,7 +41,7 @@ const Portfolio = () => (
       <Contact />
     </div>
     
-    {/* Footer remains unaffected by the mist */}
+    {/* Footer */}
     <QuoteMachine />
   </div>
 );
