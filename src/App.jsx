@@ -15,10 +15,6 @@ const Portfolio = () => (
     {/* Header stays above the mist */}
     <Header />
     
-    {/* Global vertical line remains in place */}
-    <div className="hidden lg:block">
-      <CircleNavigator />
-    </div>
     {/* Main content container that gets the mist overlay */}
     <div className="relative z-20">
       <div 
